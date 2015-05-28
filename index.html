@@ -26,8 +26,8 @@ function validateNoNumbers(elementToValidate)
       <td> 
         <input type="text" id="input1" name="input1" style="width:500px"
                value="this string may not contain numbers"
-               onblur="validateNoNumbers(this)"/>
-        <input type="button" value="validate"/>
+               />
+        <input type="button" value="validate" onclick="validateNoNumbers(document.getElementById('input1'))" />
       </td>
       <td>
         <span id="verror" class="verror" style="color:red;display:none;"></span>
