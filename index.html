@@ -12,19 +12,26 @@ function validateNoNumbers(elementToValidate)
   if(!isValid)
   {
     $('#verror').text("Error: please ensure there are no numbers in the field.").fadeIn();
+    $('#vsuccess').slideUp();
+  }
+  else
+  {
+    $('#vsuccess').text("Success!  --  There are no numbers in the field.").fadeIn();
+    $('#verror').slideUp();
   }
 }
 </script>
   <table>
     <tr>
       <td> 
-        <input type="text" id="input1" name="input1" style=""
+        <input type="text" id="input1" name="input1" style="width:500px"
                value="this string may not contain numbers"
                onblur="validateNoNumbers(this)"/>
         <input type="button" value="validate"/>
       </td>
       <td>
         <span id="verror" class="verror" style="color:red;display:none;"></span>
+        <span id="verror" class="vsuccess" style="color:green;display:none;"></span>
       </td>
     </tr>
   </table>
