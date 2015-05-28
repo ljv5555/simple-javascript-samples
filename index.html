@@ -2,9 +2,19 @@
 <html>
 <head>
 <title>simple-javascript-samples</title>
-<script src=""></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script>
-
+function validateNoNumbers(elementToValidate)
+{
+  var isValid = elementToValidate 
+         && elementToValidate.value 
+         && elementToValidate.value.split(new RegExp("[0-9]","g")).length==1;
+  if(!isValid)
+  {
+    $('#verror').text("Error: please ensure there are no numbers in the field.").fadeIn();
+  }
+}
+</script>
   <table>
     <tr>
       <td> 
@@ -13,14 +23,11 @@
                onblur="validateNoNumbers(this)"/>
       </td>
       <td>
-        <span id="verror" class="verror" style="color:red;"/>
+        <span id="verror" class="verror" style="color:red;display:none;"></span>
       </td>
     </tr>
   </table>
   
-  
-
-</script>
 </head>
 <body>
 </body>
