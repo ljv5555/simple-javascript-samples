@@ -18,9 +18,10 @@ function validateNoNumbers(elementToValidate)
   <table>
     <tr>
       <td> 
-        <input type="text" id="input1" name="input1" 
+        <input type="text" id="input1" name="input1" style=""
                value="this string may not contain numbers"
                onblur="validateNoNumbers(this)"/>
+        <input type="button" value="validate"/>
       </td>
       <td>
         <span id="verror" class="verror" style="color:red;display:none;"></span>
